@@ -42,19 +42,19 @@ const ContactSection = () => {
     {
       icon: "📞",
       title: "Call Us",
-      detail: "+234 XXX XXX XXXX",
+      detail: "+234 9124073617",
       description: "Available during business hours"
     },
     {
       icon: "💬",
       title: "WhatsApp",
-      detail: "Available 24/7",
+      detail: "+234 9124073617",
       description: "Quick response guaranteed"
     },
     {
       icon: "📍",
       title: "Location",
-      detail: "Batsari, Katsina State",
+      detail: "Kugbo, Abuja FCT, Nigeria",
       description: "Nigeria"
     },
     {

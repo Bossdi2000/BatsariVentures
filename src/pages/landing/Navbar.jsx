@@ -97,10 +97,12 @@ const Navbar = () => {
     transition: 'all 0.3s ease'
   };
 
-  const logoIconStyle = {
-    fontSize: isMobile ? '24px' : isTablet ? '28px' : '32px',
+  const logoImageStyle = {
+    width: isMobile ? '24px' : isTablet ? '28px' : '32px',
+    height: isMobile ? '24px' : isTablet ? '28px' : '32px',
     marginRight: '10px',
-    filter: 'drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3))'
+    filter: 'drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3))',
+    objectFit: 'contain'
   };
 
   const logoTextStyle = {
@@ -241,13 +243,13 @@ const Navbar = () => {
             style={logoStyle}
             onClick={(e) => handleSmoothScroll(e, '#home')}
           >
-            <motion.span 
-              style={logoIconStyle}
+            <motion.img 
+              src="/BAT1.jpeg"
+              alt="Batsari Livestock Logo"
+              style={logoImageStyle}
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-            >
-              🐄
-            </motion.span>
+            />
             <span style={logoTextStyle}>
               {isMobile ? 'Batsari' : 'Batsari Livestock'}
             </span>

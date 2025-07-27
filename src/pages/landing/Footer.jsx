@@ -20,16 +20,16 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: '📞', text: '+234 123 456 7890', href: 'tel:+2341234567890' },
-    { icon: '💬', text: 'WhatsApp 24/7', href: 'https://wa.me/2341234567890' },
-    { icon: '📍', text: 'Batsari, Katsina State' },
-    { icon: '✉️', text: 'info@batsarilivestock.com', href: 'mailto:info@batsarilivestock.com' },
+    { icon: '📞', text: '+234 9124073617', href: 'tel:+234 9124073617' },
+    { icon: '💬', text: 'WhatsApp 24/7', href: 'https://wa.me/+234 912 407 3617' },
+    { icon: '📍', text: 'Kugbo, Abuja FCT, Nigeria' },
+    { icon: '✉️', text: 'batsarilivestock@gmail.com', href: 'batsarilivestock@gmail.com' },
   ];
 
   const socialLinks = [
-    { icon: '📘', href: 'https://facebook.com/batsarilivestock', ariaLabel: 'Facebook' },
-    { icon: '🐦', href: 'https://twitter.com/batsarilivestock', ariaLabel: 'Twitter' },
-    { icon: '💬', href: 'https://wa.me/2341234567890', ariaLabel: 'WhatsApp' },
+    { icon: '📘', href: '#', ariaLabel: 'Facebook' },
+    { icon: '🐦', href: '#', ariaLabel: 'Twitter' },
+    { icon: '💬', href: 'https://wa.me/+234 9124073617', ariaLabel: 'WhatsApp' },
   ];
 
   return (
