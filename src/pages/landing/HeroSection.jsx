@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== 'undefined' ? window.innerWidth : 1200,
     height: typeof window !== 'undefined' ? window.innerHeight : 800
@@ -159,7 +162,9 @@ const HeroSection = () => {
     transition: 'all 0.3s ease',
     boxShadow: isPrimary ? '0 10px 15px -3px rgba(0, 0, 0, 0.1)' : 'none',
     width: isMobile ? '100%' : 'auto',
-    maxWidth: isMobile ? '280px' : 'none'
+    maxWidth: isMobile ? '280px' : 'none',
+    pointerEvents: 'auto', // Ensure clickability
+    zIndex: 10 // Prevent overlap issues
   });
 
   const statsContainerStyle = {
@@ -208,6 +213,22 @@ const HeroSection = () => {
     { number: "24/7", label: "Customer Support" },
     { number: "100%", label: "Quality Guarantee" }
   ];
+
+  // Smooth scroll handler for Contact Us Today
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    console.log(`Smooth scrolling to #${targetId} at ${new Date().toISOString()}`);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 80; // Adjust for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    } else {
+      console.error(`Element with id "${targetId}" not found. Ensure ContactSection.jsx is rendered with id="contact".`);
+    }
+  };
 
   return (
     <section id="home" style={sectionStyle}>
@@ -289,6 +310,10 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(16, 185, 129, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               style={getButtonStyle(true)}
+              onClick={() => {
+                console.log('Browse Our Livestock clicked, navigating to /livestock at', new Date().toISOString());
+                navigate('/livestock');
+              }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = '#047857';
               }}
@@ -303,6 +328,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={getButtonStyle(false)}
+              onClick={(e) => handleSmoothScroll(e, 'contact')}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = '#059669';
                 e.target.style.color = 'white';
